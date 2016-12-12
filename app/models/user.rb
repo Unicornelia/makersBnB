@@ -13,7 +13,7 @@ class User
   property :email, String
   property :password_hash, Text
 
-  validates_confirmation_of :password, confirm: :password_confirmation
+  validates_confirmation_of :password
 
   @@count = 0
 
