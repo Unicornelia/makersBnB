@@ -22,5 +22,9 @@ feature User do
     expect(page).to have_content 'Password and confirmation password do not match'
   end
 
+  scenario "I can't sign up without an email address" do
+    expect { sign_up(email: nil) }.not_to change(User, :count)
+  end
+
 
 end
