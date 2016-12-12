@@ -1,0 +1,15 @@
+Your space has been added!
+
+<h1>Spaces</h1>
+
+<ul id='spaces'>
+  <% @spaces.each do |space| %>
+    <li>
+      <%= space.space_name %>
+      <br>
+      <%= space.space_description %>
+      <br>
+      £<%= space.price %> per night
+    </li>
+  <% end %>
+</ul>
