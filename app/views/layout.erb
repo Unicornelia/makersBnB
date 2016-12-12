@@ -16,7 +16,12 @@
       <li> <a href="#"> Log out </a></li>
     </ul>
   </nav>
-  <h1> Welcome Visitor! </h1> </br>
+
+  <% if current_user %>
+  Welcome, <%= current_user.username%>
+  <% else %>
+  Visit
+<% end %>
 <%=yield%>
 </body>
 </html>

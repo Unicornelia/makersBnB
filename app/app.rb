@@ -1,13 +1,15 @@
 ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
 require './app/models/user.rb'
+require_relative 'datamapper_setup'
 
 class MakersBnB < Sinatra::Base
 
   enable :sessions
+  set :session_secret, 'super secret'
 
   get '/' do
-    @username = session[:username]
+    @user = current_user
     erb :index
   end
 
@@ -16,8 +18,15 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/sign_up' do
-    session[:username] = params[:username]
-    redirect '/'
+    user = User.create(params)
+    session[:user_id] = user.id
+    redirect '/' unless user.nil?
+  end
+
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
   end
 
   run! if app_file == $0
