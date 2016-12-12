@@ -9,6 +9,10 @@ so I can use the website
 I can sign up
 
 As a User(H, G)
+so that my account is protected
+My password is stored safely
+
+As a User(H, G)
 so that I can avoid others using my account
 I can log in and log out
 
