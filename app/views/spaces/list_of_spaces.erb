@@ -1,5 +1,15 @@
 Your space has been added!
 
-My space
-It's very nice.
-£50 per night
+<h1>Spaces</h1>
+
+<ul id='spaces'>
+  <% @spaces.each do |space| %>
+    <li>
+      <%= space.space_name %>
+      <br>
+      <%= space.space_description %>
+      <br>
+      £<%= space.price %> per night
+    </li>
+  <% end %>
+</ul>
