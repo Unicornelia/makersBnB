@@ -1,4 +1,6 @@
+ENV['RACK_ENV'] ||= 'development'
 require 'sinatra/base'
+require_relative './models/space'
 
 class MakersBnB < Sinatra::Base
   get '/' do
@@ -9,7 +11,8 @@ class MakersBnB < Sinatra::Base
     erb :'/spaces/new'
   end
 
-  post '/spaces/new' do
+  post '/spaces' do
+    Space.create(space_name: params[:space_name], space_description: params[:space_description], price: params[:price])
     redirect('/spaces')
   end
 

@@ -1,4 +1,4 @@
-RSpec.feature 'adding a new space' do
+feature 'adding a new space' do
   scenario 'a user can fill in their details when adding a new space' do
     visit '/spaces/new'
     expect(page.status_code).to eq (200)
@@ -6,14 +6,16 @@ RSpec.feature 'adding a new space' do
   end
 
   scenario 'a user can add a new space' do
-    visit '/spaces/new'
-    fill_in 'space_name', with: 'My space'
-    fill_in 'space_description', with: "It's very nice."
-    fill_in 'price', with: '50'
-    click_button 'Add space'
+    add_space
     expect(current_path).to eq('/spaces')
     expect(page).to have_content('Your space has been added!')
   end
 
+  scenario 'a user can see their newly created space on the "spaces" page once they have created it' do
+    add_space
+    expect(page).to have_content('My space')
+    expect(page).to have_content("It's very nice.")
+    expect(page).to have_content('£50 per night')
+  end
 
 end
