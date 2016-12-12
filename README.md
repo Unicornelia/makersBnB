@@ -37,7 +37,7 @@ so that I can be sure somebody booked my space
 I have to send a confirmation
 
 As a User(G)
-so that I that I am not confused by options
+so that I am not confused by options
 I should not be able to book a space that already has been hired
 ```
 
