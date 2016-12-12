@@ -1,3 +1,4 @@
+ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
 require './app/models/user.rb'
 
@@ -6,7 +7,8 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello makersBnB!'
+    @username = session[:username]
+    erb :index
   end
 
   get '/sign_up' do
@@ -15,12 +17,7 @@ class MakersBnB < Sinatra::Base
 
   post '/sign_up' do
     session[:username] = params[:username]
-    redirect '/index'
-  end
-
-  get '/index' do
-    @username = session[:username]
-    erb :index
+    redirect '/'
   end
 
   run! if app_file == $0
