@@ -1,8 +1,12 @@
 require 'sinatra/base'
 
-class makersBnB < Sinatra::Base
+class MakersBnB < Sinatra::Base
   get '/' do
     'Hello makersBnB!'
+  end
+
+  get '/spaces/new' do
+    erb :'/spaces/new'
   end
 
   # start the server if ruby file executed directly
