@@ -19,4 +19,16 @@ feature 'adding a new space' do
     expect(page).to have_content('£50 per night')
   end
 
+  scenario 'a user can add more than one space' do
+    add_space
+    expect(page).to have_content('My space')
+    click_button("List a space")
+    visit '/spaces/new'
+    fill_in 'space_name', with: 'Another space'
+    fill_in 'space_description', with: "It's also nice."
+    fill_in 'price', with: '60'
+    click_button 'Add space'
+    expect(page).to have_content('Another space')
+  end
+
 end

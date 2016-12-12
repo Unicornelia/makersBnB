@@ -2,6 +2,10 @@ Your space has been added!
 
 <h1>Spaces</h1>
 
+<form action='/spaces/new'>
+  <input type='submit' value='List a space'>
+</form>
+
 <ul id='spaces'>
   <% @spaces.each do |space| %>
     <li>
