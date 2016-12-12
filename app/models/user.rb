@@ -15,6 +15,7 @@ class User
 
   validates_confirmation_of :password
   validates_presence_of :email
+  validates_format_of :email, as: :email_address
 
   @@count = 0
 
