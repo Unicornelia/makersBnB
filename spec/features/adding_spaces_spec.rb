@@ -7,6 +7,7 @@ feature 'adding a new space' do
 
   scenario 'a user can add a new space' do
     add_space
+    expect { add_space }.to change(Space, :count).by(1)
     expect(current_path).to eq('/spaces')
     expect(page).to have_content('Your space has been added!')
   end
