@@ -1,0 +1,22 @@
+<h1> New Spaces </h1>
+<h2> Add your space to rent below! </h2>
+
+<form action='/spaces' method='post'>
+  <label for='space_name'>
+    Name of space:
+    <input type='text' name='space_name'>
+  </label>
+  <br>
+  <label for='space_description'>
+    Describe your space:
+  </label>
+  <br>
+    <textarea rows='4' cols='50' name='space_description' placeholder='Please write something exciting about your space!'></textarea>
+  <br>
+  <label for='price'>
+    Price (per night):
+    <input type='text' name='price'>
+  </label>
+  <br>
+  <input type='submit' value='Add space'>
+</form>

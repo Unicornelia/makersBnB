@@ -6,6 +6,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
+require_relative './helpers/adding_spaces_helper'
 
 Capybara.app = MakersBnB
 DatabaseCleaner.strategy = :truncation
@@ -19,6 +20,7 @@ RSpec.configure do |config|
 
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
+
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
@@ -37,4 +39,6 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+
 end
