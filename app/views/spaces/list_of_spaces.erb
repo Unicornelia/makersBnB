@@ -1,6 +1,12 @@
-Your space has been added!
+<%if flash[:confirmation]%>
+<%=flash[:confirmation]%>
+<%end%>
 
 <h1>Spaces</h1>
+
+<form action='/spaces/new'>
+  <input type='submit' value='List a space'>
+</form>
 
 <ul id='spaces'>
   <% @spaces.each do |space| %>

@@ -7,6 +7,7 @@ feature 'adding a new space' do
 
   scenario 'a user can add a new space' do
     add_space
+    expect { add_space }.to change(Space, :count).by(1)
     expect(current_path).to eq('/spaces')
     expect(page).to have_content('Your space has been added!')
   end
@@ -16,6 +17,18 @@ feature 'adding a new space' do
     expect(page).to have_content('My space')
     expect(page).to have_content("It's very nice.")
     expect(page).to have_content('£50 per night')
+  end
+
+  scenario 'a user can add more than one space' do
+    add_space
+    expect(page).to have_content('My space')
+    click_button("List a space")
+    visit '/spaces/new'
+    fill_in 'space_name', with: 'Another space'
+    fill_in 'space_description', with: "It's also nice."
+    fill_in 'price', with: '60'
+    click_button 'Add space'
+    expect(page).to have_content('Another space')
   end
 
 end
