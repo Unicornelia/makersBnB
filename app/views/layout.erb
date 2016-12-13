@@ -30,9 +30,13 @@
   </ul>
 <% end %>
 
-  <% if current_user %>
+<% if current_user %>
   Welcome, <%= current_user.username%>
-  <% else %>
+  <form method='post' action='/sessions'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' value='Log Out'>
+  </form>
+<% else %>
   Please sign up
 <% end %>
 <%=yield%>

@@ -6,7 +6,7 @@ require_relative './models/space'
 require_relative 'datamapper_setup'
 
 class MakersBnB < Sinatra::Base
-
+  use Rack::MethodOverride
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'super secret'
@@ -45,6 +45,12 @@ class MakersBnB < Sinatra::Base
       flash.now[:errors] = ['The email or password is incorrect']
       erb :'sessions/new'
     end
+  end
+
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = "Goodbye you cool, cool winner!"
+    redirect to '/'
   end
 
   get '/spaces/new' do
