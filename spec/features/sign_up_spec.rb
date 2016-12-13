@@ -1,6 +1,6 @@
 require 'web_helpers'
 
-feature User do
+feature "Sign up" do
 
   scenario "Expects to redirect to index page after sign_up" do
     sign_up
@@ -16,13 +16,13 @@ feature User do
 
   scenario 'Requires matching passwords, aka confirmation' do
     expect {sign_up(password_confirmation: 'wrong')}.not_to change(User, :count)
-    expect(current_path).to include "/sign_up"
+    expect(current_path).to include "/sign-up"
     expect(page).to have_content 'Password does not match the confirmation'
   end
 
   scenario 'I cannot sign up without an email address' do
    expect { sign_up(email: nil) }.not_to change(User, :count)
-   expect(current_path).to eq('/sign_up')
+   expect(current_path).to eq('/sign-up')
    expect(page).to have_content('Email must not be blank')
  end
 
