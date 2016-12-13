@@ -1,5 +1,8 @@
 <!-- Page Content -->
 <div class="container">
+  <%if flash[:confirmation]%>
+  <%=flash[:confirmation]%>
+  <%end%>
 
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">

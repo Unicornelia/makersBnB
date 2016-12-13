@@ -1,6 +1,4 @@
-require 'spec_helper'
 require 'web_helpers'
-require './app/models/user'
 
 feature User do
 
