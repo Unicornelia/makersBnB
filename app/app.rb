@@ -6,7 +6,7 @@ require_relative './models/space'
 require_relative 'datamapper_setup'
 
 class MakersBnB < Sinatra::Base
-  
+
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'super secret'
@@ -46,7 +46,7 @@ class MakersBnB < Sinatra::Base
     @spaces = Space.all
     erb :'/spaces/list_of_spaces'
   end
-  
+
   helpers do
     def current_user
       @current_user ||= User.get(session[:user_id])
