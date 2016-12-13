@@ -5,9 +5,9 @@ class Space
   include DataMapper::Resource
 
   property :id, Serial
-  property :space_name, String
+  property :space_name, String, :required => true
   property :space_description, Text
-  property :price, String
+  property :price, String, :required => true
   property :start_date, Date
   property :end_date, Date
 
