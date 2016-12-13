@@ -47,6 +47,11 @@ class MakersBnB < Sinatra::Base
     erb :'/spaces/list_of_spaces'
   end
 
+  get '/spaces/:space_name' do
+    @space = Space.first(space_name: params[:space_name])
+    erb :'/spaces/space'
+  end
+  
   helpers do
     def current_user
       @current_user ||= User.get(session[:user_id])

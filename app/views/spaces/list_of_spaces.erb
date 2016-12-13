@@ -1,21 +1,104 @@
-<%if flash[:confirmation]%>
-<%=flash[:confirmation]%>
-<%end%>
+<!-- Page Content -->
+<div class="container">
+  <%if flash[:confirmation]%>
+  <%=flash[:confirmation]%>
+  <%end%>
 
-<h1>Spaces</h1>
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer">
+        <h1>A Warm Welcome!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+        <p><a class="btn btn-primary btn-large">Call to action!</a>
+        </p>
+    </header>
 
-<form action='/spaces/new'>
-  <input type='submit' value='List a space'>
-</form>
+    <hr>
 
-<ul id='spaces'>
-  <% @spaces.each do |space| %>
-    <li>
-      <%= space.space_name %>
-      <br>
-      <%= space.space_description %>
-      <br>
-      £<%= space.price %> per night
-    </li>
-  <% end %>
-</ul>
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Your space has been added!</h3>
+            <h1>Spaces</h1>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+      <!-- <ul id='spaces'>
+        <% @spaces.each do |space| %>
+          <li>
+            <%= space.space_name %>
+            <br>
+            <%= space.space_description %>
+            <br>
+            £<%= space.price %> per night
+          </li>
+        <% end %>
+      </ul> -->
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+          <% @spaces.each do |space| %>
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3><%= space.space_name %></h3>
+                    <p><%= space.space_description %></p>
+                    <p>£<%= space.price %> per night </p>
+                </div>
+                <a href='/spaces/<%= space.space_name %> '><button>Visit space</button></a>
+            </div>
+            <% end %>
+        </div>
+
+        <!-- <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3>Feature Label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3>Feature Label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="http://placehold.it/800x500" alt="">
+                <div class="caption">
+                    <h3>Feature Label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Makers BnB </p>
+            </div>
+        </div>
+    </footer>
+</div>
