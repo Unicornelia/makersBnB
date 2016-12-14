@@ -7,6 +7,10 @@
 
 	<section class='col-md-3 col-sm-6 hero-feature'>
 	  <h2> Requests you've sent: </h2>
+		<% @requests.each do |request| %>
+		<%= request.requested_date %>
+		<%= request.confirmed %>
+		<% end %>
 	</section>
 
 

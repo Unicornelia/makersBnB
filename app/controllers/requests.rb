@@ -3,6 +3,7 @@ require_relative '../models/request'
 class MakersBnB < Sinatra::Base
 
   get '/requests/manager' do
+    @requests = current_user.requests
     erb :'requests/manager'
   end
 
