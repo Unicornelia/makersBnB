@@ -14,4 +14,5 @@ feature 'sending a request' do
     click_button 'Send booking request'
     expect(page).to have_content('Booking request sent!')
   end
+
 end
