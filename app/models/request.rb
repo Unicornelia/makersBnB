@@ -8,4 +8,6 @@ class Request
   property :requested_date, Date
   property :confirmed, Boolean
 
+  belongs_to :user
+  belongs_to :space
 end

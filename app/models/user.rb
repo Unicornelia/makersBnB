@@ -13,6 +13,9 @@ class User
   property :email, String, required: true, unique: true
   property :password_hash, Text
 
+  has n, :spaces
+  has n, :requests
+
 
   validates_confirmation_of :password
   validates_presence_of :email

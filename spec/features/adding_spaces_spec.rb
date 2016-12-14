@@ -1,4 +1,16 @@
 feature 'adding a new space' do
+
+  let!(:user) do
+    User.create(email: 'cool@winners.com',
+    password: 'cool99',
+    password_confirmation: 'cool99',
+    username: 'CoolWinner')
+  end
+
+  before do
+    log_in(username: user.username, password: user.password)
+  end
+
   scenario 'a user can fill in their details when adding a new space' do
     visit '/spaces/new'
     expect(page.status_code).to eq (200)
