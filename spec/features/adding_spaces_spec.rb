@@ -26,6 +26,8 @@ feature 'adding a new space' do
     fill_in 'space_name', with: 'Another space'
     fill_in 'space_description', with: "It's also nice."
     fill_in 'price', with: '60'
+    fill_in 'start_date', with: '01/01/2001'
+    fill_in 'end_date', with: '02/02/2001'
     click_button 'Add a space'
     expect(page).to have_content('Another space')
   end
