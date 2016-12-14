@@ -1,14 +1,9 @@
-require 'web_helpers'
-
 
 feature "requests " do
-  let!(:user) do
-    User.create(email: 'cool@winners.com',
-    password: 'cool99',
-    password_confirmation: 'cool99',
-    username: 'CoolWinner')
-  end
 
+    let!(:user) do
+    create_user
+  end
 
   scenario "seeing your requests" do
     log_in(username: user.username, password: user.password)

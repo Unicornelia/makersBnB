@@ -1,13 +1,7 @@
-require 'web_helpers'
-
-
 feature "User sign in" do
 
   let!(:user) do
-    User.create(email: 'cool@winners.com',
-    password: 'cool99',
-    password_confirmation: 'cool99',
-    username: 'CoolWinner')
+    create_user
   end
 
   scenario 'with correct credentials' do
@@ -18,10 +12,7 @@ end
 
 feature "User sign out" do
   before(:each) do
-    User.create(email: 'cool@winners.com',
-    password: 'cool99',
-    password_confirmation: 'cool99',
-    username: 'CoolWinner')
+    create_user
   end
 
   scenario "while being signed in" do

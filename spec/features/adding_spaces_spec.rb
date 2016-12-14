@@ -1,10 +1,8 @@
+
 feature 'adding a new space' do
 
   let!(:user) do
-    User.create(email: 'cool@winners.com',
-    password: 'cool99',
-    password_confirmation: 'cool99',
-    username: 'CoolWinner')
+    create_user
   end
 
   before do

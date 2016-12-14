@@ -14,3 +14,10 @@ def log_in(*)
   fill_in "password", :with => "cool99"
   click_button "Log In"
 end
+
+def create_user
+    User.create(email: 'cool@winners.com',
+    password: 'cool99',
+    password_confirmation: 'cool99',
+    username: 'CoolWinner')
+end

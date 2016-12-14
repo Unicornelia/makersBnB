@@ -20,4 +20,7 @@ class MakersBnB < Sinatra::Base
     @space = Space.first(space_name: params[:space_name])
     erb :'/spaces/space'
   end
+
+
+
 end

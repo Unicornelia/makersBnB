@@ -1,4 +1,3 @@
-require 'web_helpers'
 
 feature "Sign up" do
 
