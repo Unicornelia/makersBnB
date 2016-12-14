@@ -15,6 +15,6 @@ class Space
   def available?(requested_date)
     return true if requested_date >= self.start_date && requested_date < self.end_date
     false
-end
+  end
 
 end
