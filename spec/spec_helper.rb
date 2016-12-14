@@ -6,7 +6,6 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
-require_relative './helpers/adding_spaces_helper'
 
 Capybara.app = MakersBnB
 DatabaseCleaner.strategy = :truncation
