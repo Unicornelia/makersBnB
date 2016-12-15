@@ -38,7 +38,7 @@
           <li class='user-name'>  Welcome, <%= current_user.username %>!</li>
           <li class='log-out'>  <form method='post' action='/sessions'>
             <input type='hidden' name='_method' value='delete'>
-            <input type='submit' value='Log Out'>
+            <input class='button' type='submit' value='Log Out'>
           </form> </li>
           <% else %>
           <li><a href="/sign-up"> Please Sign up </a></li>
@@ -70,5 +70,12 @@
 
     </div>
   </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

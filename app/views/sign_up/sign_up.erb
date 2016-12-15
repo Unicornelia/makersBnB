@@ -1,15 +1,14 @@
+<div class='panel panel-danger'>
 <h1> Please Sign Up </h1>
-
-<body>
 <form method = "post" action = "/sign-up" >
-  <label for = "username"> Username</label>
+  <label for = "username"> <span class='label label-danger'>Username</span></label>
   <input id = "username" type = "text" name = "username"/>
-  <label for = "email"> Email</label>
-  <input id = "email" type = "text" name = "email"/>
-  <label for = "password"> Password</label>
-  <input id = "password" type = "text" name = "password"/>
-  <label for = "password"> Confirm Password</label>
-  <input id = "password_confirmation" type = "text" name = "password_confirmation"/>
+  <label for = "email"> <span class='label label-danger'> Email</span></label>
+  <input id = "email" type="text" name = "email"/>
+  <label for = "password"> <span class='label label-danger'> Password</span></label>
+  <input id = "password" type="password" name="password"/>
+  <label for = "password">  <span class='label label-danger'>Confirm Password</span></label>
+  <input id = "password_confirmation" type="password" name="password_confirmation"/>
   <input id="submit" class="button" type="submit" value="Sign Up"/>
 </form>
-</body>
+</div>

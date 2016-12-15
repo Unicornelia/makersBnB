@@ -10,9 +10,10 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">
-        <h1>A Warm Welcome!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-        <p><a class="btn btn-primary btn-large">Call to action!</a>
+      <h1><span>Welcome to SpacesBnB!</span></h1>
+      <h3><span>Find below the available spaces to hire</span></h3>
+      <img class='image-rounded'src='images/sloth.gif'></img>
+        <p><a class="button btn btn-primary btn-large" href='https://youtu.be/I1188GO4p1E' target='_blank' >Get shwifty</a>
         </p>
     </header>
 
@@ -21,21 +22,21 @@
     <!-- Title -->
     <div class="row">
         <div class="col-lg-12">
-            <h1>Spaces</h1>
-            <div class='panel panel-success' width=50%>
+            <div class='panel panel-danger'>
+            <div class="panel-heading"><h1>Spaces</h1></div>
             <h3>Choose the day you would like to book:</h3>
             <form action='/filtered-spaces' method='post'>
             <label for='start_date'>
-              Which day would you like to stay?
+              <span class='label label-danger'>Which day would you like to stay?</span>
               <input type='date' name='start_date'>
             </label>
             <br>
             <label for='end_date'>
-              End date:
+              <span class='label label-danger'>End date:</span>
               <input type='date' name='end_date'>
             </label>
             <br>
-            <input type='submit' value='Filter available spaces'>
+            <input class='button' type='submit' value='Filter available spaces'>
           </form>
           </div>
         </div>
@@ -44,74 +45,23 @@
 
     <!-- Page Features -->
     <div class="row text-center">
-
-      <!-- <ul id='spaces'>
-        <% @spaces.each do |space| %>
-          <li>
-            <%= space.space_name %>
-            <br>
-            <%= space.space_description %>
-            <br>
-            £<%= space.price %> per night
-          </li>
-        <% end %>
-      </ul> -->
-
-        <div class="col-md-3 col-sm-6 hero-feature">
+        <div class="col-lg-12 hero-feature">
           <% @spaces.each do |space| %>
             <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
+                <img class='image-rounded' src="/images/treehouse.jpg" alt="treehouse">
                 <div class="caption">
                     <h3><%= space.space_name %></h3>
                     <p><%= space.space_description %></p>
                     <p>£<%= space.price %> per night </p>
                 </div>
-                <a href='/spaces/<%= space.space_name %> '><button>Visit space</button></a>
+                <a href='/spaces/<%= space.space_name %> '><button class='button'>Visit space</button></a>
             </div>
             <% end %>
         </div>
-
-        <!-- <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 hero-feature">
-            <div class="thumbnail">
-                <img src="http://placehold.it/800x500" alt="">
-                <div class="caption">
-                    <h3>Feature Label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>
-                    </p>
-                </div>
-            </div>
-        </div> -->
-
     </div>
     <!-- /.row -->
 
     <hr>
-
     <!-- Footer -->
     <footer>
         <div class="row">

@@ -1,9 +1,10 @@
   <%if flash[:request_sent]%>
   <%=flash[:request_sent]%>
   <%end%>
-
-<h1> Requests <h2>
-
+<div class='panel panel-danger'>
+<div class="panel-heading">
+  <h1> Requests <h2>
+</div>
 
 	<section class='col-md-3 col-sm-6 hero-feature'>
 	  <h2> Requests you've sent: </h2>
@@ -18,3 +19,4 @@
 	<section class='col-md-3 col-sm-6 hero-feature'>
 	  <h2> Requests you've received: </h2>
 	</section>
+</div>

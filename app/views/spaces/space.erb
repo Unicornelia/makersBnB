@@ -1,5 +1,5 @@
 
-<div class="panel panel-default">
+<div class="panel panel-danger">
   <div class="panel-heading">
     <h1><%= @space.space_name  %></h1></div>
     <div class="panel-body" width=50%>
@@ -10,7 +10,7 @@
       <p> <%= @space.start_date %> - <%= @space.end_date %> </p>
       <form action='/requests' method='post'>
           <input type="hidden" name="space_id" value="<%= @space.id %>">
-          <button> Send booking request </button>
+          <button class='button'> Send booking request </button>
       </form>
     </div>
   </div>

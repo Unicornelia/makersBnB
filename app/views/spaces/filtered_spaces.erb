@@ -1,14 +1,20 @@
-<% if !@spaces.empty? %>
-<div class="col-md-3 col-sm-6 hero-feature">
-  <% @spaces.each do |space| %>
+<div class='panel panel-danger'>
+<div class="panel-heading"><h1>Results</h1></div>
+<div class="col-md-6 col-sm-12 hero-feature">
+  <% if !@spaces.empty? %>
+    <% @spaces.each do |space| %>
     <div class="thumbnail">
-        <img src="http://placehold.it/800x500" alt="">
-        <div class="caption">
-            <h3><%= space.space_name %></h3>
-            <p><%= space.space_description %></p>
-            <p>£<%= space.price %> per night </p>
-        </div>
+      <img src="http://placehold.it/800x500" alt="">
+      <div class="caption">
+        <h3><%= space.space_name %></h3>
+        <p><%= space.space_description %></p>
+        <p>£<%= space.price %> per night </p>
+        <% end %>
+        <% else %>
+        <h2>No spaces are available for the requested dates.</h2>
+        <button class='button btn btn-primary btn-large'><a href='/spaces'>Back to Spaces</a></button>
+        <% end %>
+      </div>
     </div>
-    <% end %>
+  </div>
 </div>
-<% end %>
