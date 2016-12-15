@@ -4,7 +4,6 @@ class MakersBnB < Sinatra::Base
 
   get '/requests/manager' do
     @requests = current_user.requests
-    require 'pry'; binding.pry
     erb :'requests/manager'
   end
 
