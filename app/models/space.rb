@@ -10,6 +10,7 @@ class Space
   property :price, String, :required => true
   property :start_date, Date, :required => true
   property :end_date, Date, :required => true
+  # property :image, FilePath
 
   def available?(requested_date)
     return true if requested_date >= self.start_date && requested_date < self.end_date

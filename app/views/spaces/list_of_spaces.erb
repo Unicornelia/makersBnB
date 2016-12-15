@@ -1,11 +1,10 @@
 <!-- Page Content -->
 <div class="container">
-  <%if flash[:confirmation]%>
-  <%=flash[:confirmation]%>
+  <h3><%if flash[:confirmation]%></h3>
+  <h3><%=flash[:confirmation]%></h3>
   <%end%>
-
-  <%if flash[:request_not_sent]%>
-    <%=flash[:request_not_sent]%>
+  <h3><%if flash[:request_not_sent]%></h3>
+  <h3> <%=flash[:request_not_sent]%></h3>
     <%end%>
 
     <!-- Jumbotron Header -->
@@ -53,6 +52,7 @@
                     <h3><%= space.space_name %></h3>
                     <p><%= space.space_description %></p>
                     <p>£<%= space.price %> per night </p>
+                    <img src="<%= @filename %>" />
                 </div>
                 <a href='/spaces/<%= space.space_name %> '><button class='button'>Visit space</button></a>
             </div>
@@ -66,7 +66,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Makers BnB </p>
+                <p>Copyright &copy; Team Project @ Makers Academy</p>
             </div>
         </div>
     </footer>

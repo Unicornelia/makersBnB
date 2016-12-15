@@ -1,35 +1,38 @@
 
 <div class="panel panel-danger">
-<h1> New Spaces </h1>
-<h2> Add your space to rent below! </h2>
-
-<form action='/spaces' method='post'>
+<h2> Add your space to rent here! </h2>
+<form action='/spaces' method='post'  enctype="multipart/form-data">
   <label for='space_name'>
-    Name of space:
+    <h3><span class='label label-danger'>Name of space:</span></h3>
     <input type='text' name='space_name'>
   </label>
   <br>
   <label for='space_description'>
-    Describe your space:
+    <h3><span class='label label-danger'>Describe your space:</span></h3>
   </label>
   <br>
-  <textarea rows='4' cols='50' name='space_description' placeholder='Please write something exciting about your space!'></textarea>
+  <textarea rows='4' cols='60' name='space_description' placeholder='Please write something exciting about your space!'></textarea>
   <br>
   <label for='price'>
-    Price (per night):
-    <input type='text' name='price'>
+    <h3><span class='label label-danger'>Price (per night):</span></h3>
+    <input type='text' name='price' placeholder='£'>
   </label>
   <br>
   <label for='start_date'>
-    Start date:
+    <h3><span class='label label-danger'>Start date:</span></h3>
     <input type='date' name='start_date'>
   </label>
-  <br>
   <label for='end_date'>
-    End date:
+    <h3><span class='label label-danger'>End date:</span></h3>
     <input type='date' name='end_date'>
   </label>
-  <br>
+</br>
+  <label for='upload_image'>
+    <h3><span class='label label-danger'>Upload image:</span></h3>
+     <input type="file" name="file">
+     <input class='button' type="submit" value="Upload image">
+   </label>
+   <br>
   <input class='button' type='submit' value='Add a space'>
 </form>
 </div>
@@ -37,7 +40,7 @@
 <footer>
   <div class="row">
     <div class="col-lg-12">
-      <p>Copyright &copy; Makers BnB </p>
+      <p>Copyright &copy; Team Project @ Makers Academy</p>
     </div>
   </div>
 </footer>

@@ -2,10 +2,10 @@
 <div class="panel panel-danger">
   <div class="panel-heading">
     <h1><%= @space.space_name  %></h1></div>
-    <div class="panel-body" width=50%>
+    <div class="panel-body">
       <h3> Description:<br/><br/> </h3> <p><%= @space.space_description %> </p>
       <h3> Price/night: £<%= @space.price %> </h3>
-      <div class='panel panel-success' width=50%>
+      <div class='panel panel-danger'>
       <h3>Availability date ranges:</h3>
       <p> <%= @space.start_date %> - <%= @space.end_date %> </p>
       <form action='/requests' method='post'>
@@ -14,3 +14,11 @@
       </form>
     </div>
   </div>
+
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; Team Project @ Makers Academy</p>
+      </div>
+    </div>
+  </footer>

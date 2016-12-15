@@ -1,22 +1,30 @@
-  <%if flash[:request_sent]%>
-  <%=flash[:request_sent]%>
-  <%end%>
 <div class='panel panel-danger'>
+  <h3><%if flash[:request_sent]%></h3>
+  <h3><%=flash[:request_sent]%></h3>
+  <%end%>
 <div class="panel-heading">
   <h1> Requests <h2>
 </div>
 
-	<section class='col-md-3 col-sm-6 hero-feature'>
-	  <h2> Requests you've sent: </h2>
+	<div class='panel panel-danger'>
+	  <div class="panel-body"><h2> Requests you've sent: </h2></div>
 		<% @requests.each do |request| %>
-    Name: <%= request.space.space_name %>
-		Date requested: <%= request.requested_date %>
-    Name of guest: <%= request.user.username %>
+    <h2>Name:</h2> <p><%= request.space.space_name %></p>
+		<h2>Date requested:</h2> <p><%= request.requested_date %></p>
+    <h2>Name of guest:</h2> <p><%= request.user.username %></p>
+        --------------
 		<% end %>
-	</section>
+	</div>
 
-
-	<section class='col-md-3 col-sm-6 hero-feature'>
-	  <h2> Requests you've received: </h2>
-	</section>
+	<div class='panel panel-danger'>
+	  <div class="panel-body"><h2> Requests you've received: </h2></div>
+	</div>
 </div>
+
+<footer>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Copyright &copy; Team Project @ Makers Academy</p>
+    </div>
+  </div>
+</footer>

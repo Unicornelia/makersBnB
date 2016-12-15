@@ -2,6 +2,12 @@ html {
   padding: 40px;
 }
 
+nav {
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
 header {
   background-image: url('/images/fantasy.jpg');
   text-shadow: white;
@@ -13,6 +19,29 @@ header p {
 
 header span {
   color: white;
+}
+
+input, textarea {
+    border: 5px solid #ccabb2;
+    -webkit-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    -moz-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 5px;
+    background: rgba(242,242,242,0.5);
+    margin: 0 0 10px 0;
+}
+
+.panel {
+  margin: auto;
+  width: 600px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .panel-danger {
@@ -41,7 +70,7 @@ header span {
 }
 
 .image-rounded {
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 20px;
   margin-bottom: 5px;
 }
