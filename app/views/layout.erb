@@ -15,7 +15,7 @@
   <!-- Custom CSS -->
   <link href="/css/heroic-features.css" rel="stylesheet">
   <link href='/css/custom.css' rel='stylesheet'>
-  
+
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-          <li class='user-name'>  Welcome, <%= current_user.username.capitalize %>!</li>
+          <li class='user-name'>  Welcome, <%= current_user.username %>!</li>
           <li class='log-out'>  <form method='post' action='/sessions'>
             <input type='hidden' name='_method' value='delete'>
             <input type='submit' value='Log Out'>

@@ -14,3 +14,23 @@ def log_in(*)
   fill_in "password", :with => "cool99"
   click_button "Log In"
 end
+
+def add_first_space
+  visit '/spaces/new'
+  fill_in 'space_name', with: 'First space'
+  fill_in 'space_description', with: "It's first."
+  fill_in 'price', with: '60'
+  fill_in 'start_date', with: Date.new(2017, 01, 01)
+  fill_in 'end_date', with: Date.new(2017, 02, 02)
+  click_button 'Add a space'
+end
+
+def add_second_space
+  visit '/spaces/new'
+  fill_in 'space_name', with: 'Second space'
+  fill_in 'space_description', with: "It's second."
+  fill_in 'price', with: '12'
+  fill_in 'start_date', with: Date.new(2017, 03, 01)
+  fill_in 'end_date', with: Date.new(2017, 04, 02)
+  click_button 'Add a space'
+end
