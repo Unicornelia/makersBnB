@@ -1,6 +1,5 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
-require './app/datamapper_setup'
 
 class Space
   include DataMapper::Resource
@@ -9,12 +8,15 @@ class Space
   property :space_name, String, :required => true
   property :space_description, Text
   property :price, String, :required => true
-  property :start_date, Date
-  property :end_date, Date
+  property :start_date, Date, :required => true
+  property :end_date, Date, :required => true
 
   def available?(requested_date)
     return true if requested_date >= self.start_date && requested_date < self.end_date
     false
   end
+
+  belongs_to :user
+  has n, :requests
 
 end

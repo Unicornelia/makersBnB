@@ -7,7 +7,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(space_name: params[:space_name], space_description: params[:space_description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
+    current_user.spaces.create(space_name: params[:space_name], space_description: params[:space_description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
     flash.next[:confirmation] = "Your space has been added!"
     redirect('/spaces')
   end
@@ -36,4 +36,7 @@ class MakersBnB < Sinatra::Base
     @space = Space.first(space_name: params[:space_name])
     erb :'/spaces/space'
   end
+
+
+
 end
