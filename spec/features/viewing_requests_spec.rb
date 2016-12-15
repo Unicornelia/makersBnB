@@ -13,11 +13,10 @@ feature "requests " do
   end
 
   scenario "see a new request" do
-    log_in(username: user.username, password: user.password)
-    add_space
-    visit 'spaces/My%20space'
+    add_first_space
+    visit 'spaces/First%20space'
     click_button 'Send booking request'
-    expect(page).to have_content("My space")
+    expect(page).to have_content("First space")
     expect(page).to have_content("CoolWinner")
   end
 

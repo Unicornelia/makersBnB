@@ -6,7 +6,6 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'database_cleaner'
-require_relative './helpers/adding_spaces_helper'
 require_relative './helpers/web_helpers'
 
 Capybara.app = MakersBnB

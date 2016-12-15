@@ -20,8 +20,11 @@ def create_user
     password: 'cool99',
     password_confirmation: 'cool99',
     username: 'CoolWinner')
+end
 
 def add_first_space
+  create_user
+  log_in
   visit '/spaces/new'
   fill_in 'space_name', with: 'First space'
   fill_in 'space_description', with: "It's first."

@@ -8,6 +8,7 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     current_user.spaces.create(space_name: params[:space_name], space_description: params[:space_description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date])
+    @space = Space.all
     flash.next[:confirmation] = "Your space has been added!"
     redirect('/spaces')
   end
