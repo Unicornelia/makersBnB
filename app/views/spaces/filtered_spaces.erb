@@ -1,0 +1,14 @@
+<% if !@spaces.empty? %>
+<div class="col-md-3 col-sm-6 hero-feature">
+  <% @spaces.each do |space| %>
+    <div class="thumbnail">
+        <img src="http://placehold.it/800x500" alt="">
+        <div class="caption">
+            <h3><%= space.space_name %></h3>
+            <p><%= space.space_description %></p>
+            <p>£<%= space.price %> per night </p>
+        </div>
+    </div>
+    <% end %>
+</div>
+<% end %>

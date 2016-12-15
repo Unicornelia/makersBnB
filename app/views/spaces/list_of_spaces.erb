@@ -22,6 +22,22 @@
     <div class="row">
         <div class="col-lg-12">
             <h1>Spaces</h1>
+            <div class='panel panel-success' width=50%>
+            <h3>Choose the day you would like to book:</h3>
+            <form action='/filtered-spaces' method='post'>
+            <label for='start_date'>
+              Which day would you like to stay?
+              <input type='date' name='start_date'>
+            </label>
+            <br>
+            <label for='end_date'>
+              End date:
+              <input type='date' name='end_date'>
+            </label>
+            <br>
+            <input type='submit' value='Filter available spaces'>
+          </form>
+          </div>
         </div>
     </div>
     <!-- /.row -->
