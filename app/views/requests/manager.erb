@@ -8,13 +8,21 @@
 	<section class='col-md-3 col-sm-6 hero-feature'>
 	  <h2> Requests you've sent: </h2>
 		<% @requests.each do |request| %>
-    Name: <%= request.space.space_name %>
-		Date requested: <%= request.requested_date %>
-    Name of guest: <%= request.user.username %>
+    <% if current_user.id == request.user.id %>
+      Name: <%= request.space.space_name %>
+		    Date requested: <%= request.requested_date %>
+      <% end %>
 		<% end %>
 	</section>
 
 
 	<section class='col-md-3 col-sm-6 hero-feature'>
 	  <h2> Requests you've received: </h2>
+    <% @requests.each do |request| %>
+    <% if current_user.username == request.space.user.username %>
+      Name: <%= request.space.space_name %>
+		    Date requested: <%= request.requested_date %>
+        Name of guest: <%= request.user.username %>
+      <% end %>
+		<% end %>
 	</section>

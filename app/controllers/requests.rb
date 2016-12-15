@@ -11,6 +11,7 @@ class MakersBnB < Sinatra::Base
   request = current_user.requests.new(requested_date: '02/12/2016', confirmed: false, space_id: params[:space_id])
     if request.save
       flash.next[:request_sent] = "Booking request sent!"
+      # require 'pry'; binding.pry
       redirect('/requests/manager')
     else
       flash.now[:request_not_sent] = "Booking request could not be sent!"
