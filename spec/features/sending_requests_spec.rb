@@ -11,7 +11,7 @@ feature 'sending a request' do
   scenario 'making a request' do
     visit 'spaces/My%20space'
     expect(page.status_code).to eq(200)
-    # click_button 'Send booking request'
+    click_button 'Send booking request'
     expect(page).to have_content('Booking request sent!')
   end
 
