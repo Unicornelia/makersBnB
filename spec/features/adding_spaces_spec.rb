@@ -1,4 +1,14 @@
+
 feature 'adding a new space' do
+
+  let!(:user) do
+    create_user
+  end
+
+  before do
+    log_in(username: user.username, password: user.password)
+  end
+
   scenario 'a user can fill in their details when adding a new space' do
     visit '/spaces/new'
     expect(page.status_code).to eq (200)

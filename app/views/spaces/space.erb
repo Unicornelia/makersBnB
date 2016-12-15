@@ -8,6 +8,9 @@
       <div class='panel panel-success' width=50%>
       <h3>Availability date ranges:</h3>
       <p> <%= @space.start_date %> - <%= @space.end_date %> </p>
-    </div>
+      <form action='/requests' method='post'>
+          <input type="hidden" name="space_id" value="<%= @space.id %>">
+          <button> Send booking request </button>
+      </form>
     </div>
   </div>

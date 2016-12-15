@@ -15,6 +15,12 @@ def log_in(*)
   click_button "Log In"
 end
 
+def create_user
+    User.create(email: 'cool@winners.com',
+    password: 'cool99',
+    password_confirmation: 'cool99',
+    username: 'CoolWinner')
+
 def add_first_space
   visit '/spaces/new'
   fill_in 'space_name', with: 'First space'

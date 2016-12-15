@@ -4,6 +4,10 @@
   <%=flash[:confirmation]%>
   <%end%>
 
+  <%if flash[:request_not_sent]%>
+    <%=flash[:request_not_sent]%>
+    <%end%>
+
     <!-- Jumbotron Header -->
     <header class="jumbotron hero-spacer">
         <h1>A Warm Welcome!</h1>
