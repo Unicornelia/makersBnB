@@ -11,18 +11,17 @@
     <header class="jumbotron hero-spacer">
       <h1><span>Welcome to SpacesBnB!</span></h1>
       <h3><span>Find below the available spaces to hire</span></h3>
-      <img class='image-rounded'src='images/sloth.gif'></img>
-        <p><a class="button btn btn-primary btn-large" href='https://youtu.be/I1188GO4p1E' target='_blank' >Get shwifty</a>
+        <p><a href='#list_of_spaces' class="button btn btn-primary btn-large">Go to booking</a>
         </p>
     </header>
 
     <hr>
 
     <!-- Title -->
-    <div class="row">
+    <div class="row text-center">
         <div class="col-lg-12">
             <div class='panel panel-danger'>
-            <div class="panel-heading"><h1>Spaces</h1></div>
+            <div class="panel-heading"><a name="list_of_spaces"><h1>Spaces</h1></a></div>
             <h3>Choose the day you would like to book:</h3>
             <form action='/filtered-spaces' method='post'>
             <label for='start_date'>
@@ -43,7 +42,7 @@
     <!-- /.row -->
 
     <!-- Page Features -->
-    <div class="row text-center">
+    <div class="row">
         <div class="col-lg-12 hero-feature">
           <% @spaces.each do |space| %>
             <div class="thumbnail">

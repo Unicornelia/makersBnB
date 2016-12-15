@@ -5,7 +5,7 @@
     <div class="panel-body">
       <h3> Description:<br/><br/> </h3> <p><%= @space.space_description %> </p>
       <h3> Price/night: £<%= @space.price %> </h3>
-      <div class='panel panel-danger'>
+      <div class='individual-boxes'>
       <h3>Availability date ranges:</h3>
       <p> <%= @space.start_date %> - <%= @space.end_date %> </p>
       <form action='/requests' method='post'>
@@ -14,6 +14,7 @@
       </form>
     </div>
   </div>
+</div>
 
   <footer>
     <div class="row">
