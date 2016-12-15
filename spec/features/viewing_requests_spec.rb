@@ -17,7 +17,8 @@ feature "requests " do
     add_space
     visit 'spaces/My%20space'
     click_button 'Send booking request'
-    expect(page).to have_content("false")
+    expect(page).to have_content("My space")
+    expect(page).to have_content("CoolWinner")
   end
 
 end
