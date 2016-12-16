@@ -10,10 +10,15 @@
       <h5>Availability date ranges:</h5>
       <p><%= @space.start_date %> - <%= @space.end_date %></p>
     </div>
+      <% if current_user %>
       <form action='/requests' method='post'>
           <input type="hidden" name="space_id" value="<%= @space.id %>">
           <button class='button'>Send booking request</button>
       </form>
+      <% else %>
+      <h4> You must be logged in to make a booking request! </h4>
+      <p><a class="button" href="/sessions/new">Log me in!</a></p>
+      <% end %>
     </div>
   </div>
 </div>
