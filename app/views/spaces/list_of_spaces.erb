@@ -11,7 +11,7 @@
   <header class="jumbotron hero-spacer">
     <h1><span>Welcome to SpacesBnB!</span></h1>
     <h3><span>Find below the available spaces to hire</span></h3>
-    <p><a href='#list_of_spaces' class="button btn btn-primary btn-large">Go to booking</a>
+    <p><a href='#list_of_spaces' class="button-small btn btn-primary btn-large">Go to booking</a>
     </p>
   </header>
 
@@ -26,7 +26,7 @@
         <form action='/filtered-spaces' method='post'>
           <label for='requested_date'>
             <span class='label label-danger'>Which day would you like to stay?</span>
-            <input type='date' name='requested_date'>
+            <h5><input type='date' name='requested_date'></h5>
           </label>
           <br>
           <!-- <label for='end_date'>
@@ -34,7 +34,7 @@
             <input type='date' name='end_date'>
           </label>
           <br> -->
-          <input class='button' type='submit' value='Filter available spaces'>
+          <input class='button-small' type='submit' value='Filter available spaces'>
         </form>
       </div>
     </div>
@@ -53,7 +53,7 @@
           <p>£<%= space.price %> per night </p>
           <!-- <img src="<%= @filename %>" /> -->
         </div>
-        <a href='/spaces/<%= space.space_name %> '><button class='button'>Visit space</button></a>
+        <a href='/spaces/<%= space.space_name %> '><button class='button-small'>Visit space</button></a>
       </div>
       <% end %>
     </div>
