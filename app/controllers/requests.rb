@@ -16,6 +16,6 @@ class MakersBnB < Sinatra::Base
       flash.now[:request_not_sent] = "Booking request could not be sent!"
       redirect('/spaces')
     end
-  end
+    end
 
 end

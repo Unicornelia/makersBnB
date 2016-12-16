@@ -20,11 +20,13 @@
 	  <h2> Requests you've received: </h2>
     <% @requests.each do |request| %>
     <% if current_user.username == request.space.user.username %>
-      <% p current_user.username %>
-
         Name: <%= request.space.space_name %>
 		    Date requested: <%= request.requested_date %>
         Name of guest: <%= request.user.username %>
+        <a href='/requests' method='post'>
+          <button> Confirm booking </button>
+        </a>
       <% end %>
 		<% end %>
+
 	</section>
