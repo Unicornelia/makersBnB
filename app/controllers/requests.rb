@@ -18,4 +18,10 @@ class MakersBnB < Sinatra::Base
     end
     end
 
+    post '/requests/confirm' do
+      @confirmed_request = Request.first(id: params[:request_id])
+      @confirmed_request.update(:confirmed => true)
+      redirect('/requests/manager')
+    end
+
 end

@@ -11,6 +11,7 @@
     <% if current_user.id == request.user.id %>
       Name: <%= request.space.space_name %>
 		    Date requested: <%= request.requested_date %>
+        Booking status: <%= request.confirmed %>
       <% end %>
 		<% end %>
 	</section>
@@ -23,9 +24,10 @@
         Name: <%= request.space.space_name %>
 		    Date requested: <%= request.requested_date %>
         Name of guest: <%= request.user.username %>
-        <a href='/requests' method='post'>
+        <form action='/requests/confirm' method='post'>
+          <input type="hidden" name="request_id" value="<%= request.id %>">
           <button> Confirm booking </button>
-        </a>
+        </form>
       <% end %>
 		<% end %>
 
