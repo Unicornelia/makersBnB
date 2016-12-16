@@ -21,18 +21,15 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/filtered-spaces' do
-    session[:start_date] = params[:start_date]
-    session[:end_date] = params[:end_date]
+    session[:requested_date] = params[:requested_date]
     redirect('/filtered-spaces')
   end
 
   get '/filtered-spaces' do
     spaces = Space.all
-    date_from = session[:start_date].split("-")
-    date_to = session[:end_date].split("-")
-    date_f = Date.new(date_from[0].to_i, date_from[1].to_i, date_from[2].to_i)
-    date_t = Date.new(date_to[0].to_i, date_to[1].to_i, date_to[2].to_i)
-    @spaces = spaces.select {|space| (space.start_date <= date_f) && (space.end_date >= date_t)}
+    date_requested = session[:requested_date].split("-")
+    formatted_requested_date = Date.new(date_requested[0].to_i, date_requested[1].to_i, date_requested[2].to_i)
+    @spaces = spaces.select {|space| (formatted_requested_date >= space.start_date) && (formatted_requested_date <= space.end_date) }
     erb :'/spaces/filtered_spaces'
   end
 
