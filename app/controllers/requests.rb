@@ -8,7 +8,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/requests' do
-  request = current_user.requests.new(requested_date: '02/12/2016', confirmed: false, space_id: params[:space_id])
+  request = current_user.requests.new(requested_date: session[:requested_date], confirmed: false, space_id: params[:space_id])
+  # require 'pry'; binding.pry
     if request.save
       flash.next[:request_sent] = "Booking request sent!"
       redirect('/requests/manager')

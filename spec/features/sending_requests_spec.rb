@@ -9,9 +9,7 @@ feature 'sending a request' do
   end
 
   scenario 'making a request' do
-    visit 'spaces/First%20space'
-    expect(page.status_code).to eq(200)
-    click_button 'Send booking request'
+    book_a_space
     expect(page).to have_content('Booking request sent!')
   end
 
