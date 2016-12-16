@@ -5,68 +5,68 @@
   <%end%>
   <h3><%if flash[:request_not_sent]%></h3>
   <h3> <%=flash[:request_not_sent]%></h3>
-    <%end%>
+  <%end%>
 
-    <!-- Jumbotron Header -->
-    <header class="jumbotron hero-spacer">
-      <h1><span>Welcome to SpacesBnB!</span></h1>
-      <h3><span>Find below the available spaces to hire</span></h3>
-        <p><a href='#list_of_spaces' class="button btn btn-primary btn-large">Go to booking</a>
-        </p>
-    </header>
+  <!-- Jumbotron Header -->
+  <header class="jumbotron hero-spacer">
+    <h1><span>Welcome to SpacesBnB!</span></h1>
+    <h3><span>Find below the available spaces to hire</span></h3>
+    <p><a href='#list_of_spaces' class="button btn btn-primary btn-large">Go to booking</a>
+    </p>
+  </header>
 
-    <hr>
+  <hr>
 
-    <!-- Title -->
-    <div class="row text-center">
-        <div class="col-lg-12">
-            <div class='panel panel-danger'>
-            <div class="panel-heading"><a name="list_of_spaces"><h1>Spaces</h1></a></div>
-            <h3>Choose the day you would like to book:</h3>
-            <form action='/filtered-spaces' method='post'>
-            <label for='start_date'>
-              <span class='label label-danger'>Which day would you like to stay?</span>
-              <input type='date' name='start_date'>
-            </label>
-            <br>
-            <label for='end_date'>
-              <span class='label label-danger'>End date:</span>
-              <input type='date' name='end_date'>
-            </label>
-            <br>
-            <input class='button' type='submit' value='Filter available spaces'>
-          </form>
-          </div>
-        </div>
+  <!-- Title -->
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <div class='panel panel-danger'>
+        <div class="panel-heading"><a name="list_of_spaces"><h1>Spaces</h1></a></div>
+        <h3>Choose the day you would like to book:</h3>
+        <form action='/filtered-spaces' method='post'>
+          <label for='start_date'>
+            <span class='label label-danger'>Which day would you like to stay?</span>
+            <input type='date' name='start_date'>
+          </label>
+          <br>
+          <label for='end_date'>
+            <span class='label label-danger'>End date:</span>
+            <input type='date' name='end_date'>
+          </label>
+          <br>
+          <input class='button' type='submit' value='Filter available spaces'>
+        </form>
+      </div>
     </div>
-    <!-- /.row -->
+  </div>
+  <!-- /.row -->
 
-    <!-- Page Features -->
+  <!-- Page Features -->
+  <div class="row">
+    <div class="col-lg-12 hero-feature">
+      <% @spaces.each do |space| %>
+      <div class="thumbnail">
+        <img class='image-rounded' src="/images/treehouse.jpg" alt="treehouse">
+        <div class='smaller-individual-boxes-listing'>
+          <h3><%= space.space_name %></h3>
+          <p><%= space.space_description %></p>
+          <p>£<%= space.price %> per night </p>
+          <!-- <img src="<%= @filename %>" /> -->
+        </div>
+        <a href='/spaces/<%= space.space_name %> '><button class='button'>Visit space</button></a>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr>
+  <!-- Footer -->
+  <footer>
     <div class="row">
-        <div class="col-lg-12 hero-feature">
-          <% @spaces.each do |space| %>
-            <div class="thumbnail">
-                <img class='image-rounded' src="/images/treehouse.jpg" alt="treehouse">
-                <div class="caption">
-                    <h3><%= space.space_name %></h3>
-                    <p><%= space.space_description %></p>
-                    <p>£<%= space.price %> per night </p>
-                    <img src="<%= @filename %>" />
-                </div>
-                <a href='/spaces/<%= space.space_name %> '><button class='button'>Visit space</button></a>
-            </div>
-            <% end %>
-        </div>
+      <div class="col-lg-12">
+        <p>Copyright &copy; Team Project @ Makers Academy</p>
+      </div>
     </div>
-    <!-- /.row -->
-
-    <hr>
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Team Project @ Makers Academy</p>
-            </div>
-        </div>
-    </footer>
+  </footer>
 </div>
