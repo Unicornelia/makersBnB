@@ -1,15 +1,14 @@
-<h1> Please Sign Up </h1>
-
-<body>
-<form method = "post" action = "/sign-up" >
-  <label for = "username"> Username</label>
-  <input id = "username" type = "text" name = "username"/>
-  <label for = "email"> Email</label>
-  <input id = "email" type = "text" name = "email"/>
-  <label for = "password"> Password</label>
-  <input id = "password" type = "text" name = "password"/>
-  <label for = "password"> Confirm Password</label>
-  <input id = "password_confirmation" type = "text" name = "password_confirmation"/>
+<div class='panel panel-danger'>
+<div class="panel-heading"><h1>Please Sign Up</h1></div>
+<form method = "post" action = "/sign-up" enctype="multipart/form-data">
+  <label for = "username"> <h3><span class='label label-danger'>Username</span></h3></label></br>
+  <input id = "username" type = "text" name="username"/><br>
+  <label for = "email"><h3> <span class='label label-danger'> Email</span></h3></label></br>
+  <input id = "email" type="text" name="email"/><br>
+  <label for = "password"> <h3><span class='label label-danger'> Password</span></h3></label></br>
+  <input id = "password" type="password" name="password"/><br>
+  <label for = "password"> <h3><span class='label label-danger'>Confirm Password</span></h3></label></br>
+  <input id = "password_confirmation" type="password" name="password_confirmation"/><br>
   <input id="submit" class="button" type="submit" value="Sign Up"/>
 </form>
-</body>
+</div>

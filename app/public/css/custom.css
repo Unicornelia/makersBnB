@@ -1,9 +1,117 @@
+html {
+  padding: 40px;
+}
+
+nav {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+header {
+  background-image: url('/images/fantasy.jpg');
+  background-size: 60%;
+  text-shadow: white;
+}
+
+.row {
+  margin: auto;
+}
+
+header p {
+  color: white;
+}
+
+header span {
+  color: white;
+}
+
+input, textarea {
+  border: 5px solid #ccabb2;
+  -webkit-box-shadow:
+  inset 0 0 8px  rgba(0,0,0,0.1),
+  0 0 16px rgba(0,0,0,0.1);
+  -moz-box-shadow:
+  inset 0 0 8px  rgba(0,0,0,0.1),
+  0 0 16px rgba(0,0,0,0.1);
+  box-shadow:
+  inset 0 0 8px  rgba(0,0,0,0.1),
+  0 0 16px rgba(0,0,0,0.1);
+  padding: 5px;
+  background: rgba(242,242,242,0.5);
+  margin: 0 0 10px 0;
+}
+
+.individual-boxes {
+  border: 2px dashed #ebccd1;
+  margin: auto;
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.individual-boxes-request {
+  border: 2px dashed #ebccd1;
+  margin: auto;
+  width: 45%;
+  margin-top: 10px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.smaller-individual-boxes {
+  padding-top: 10px;
+  margin: auto;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.smaller-individual-boxes-listing {
+  width: 50%;
+  padding-top: 10px;
+  margin: auto;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.smaller-individual-boxes-request  {
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.describe {
+  padding: 10px;
+  background-color: #044661;
+  color: white;
+  box-shadow: 1px 1px 1px 1px black;
+}
+
+.panel {
+  margin: auto;
+  width: 600px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.panel-danger {
+  border: 2px solid #ebccd1;
+  padding: 10px;
+}
+
 .user-name {
   color: #D3D3D3;
   padding-right: 15px;
   padding-top: 15px;
 }
 
+.label {
+  font-size: 14px;
+}
 
 .log-out {
   color: black;
@@ -11,6 +119,90 @@
   padding-top: 10px;
 }
 
-.body {
-  background-image: url("http://assets4.bigthink.com/system/idea_thumbnails/57349/size_1024/scifi.jpg?1418833155");
+.main-page-image {
+  width: 50%;
+}
+
+.image-rounded {
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  width: 50%;
+  height: 50%;
+}
+
+.button {
+  border-radius: 1.25em;
+  background-color: #ff6c6f;
+  background-image: -webkit-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+  background-image:    -moz-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+  background-image:     -ms-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+  background-image:      -o-linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+  background-image:         linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,0%,.1));
+  border: none;
+  border-radius: .5em;
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.25),
+  inset 0 2px 0 hsla(0,0%,100%,.1),
+  inset 0 1.2em 0 hsla(0,0%,100%,.1),
+  inset 0 -.2em 0 hsla(0,0%,100%,.1),
+  inset 0 -.25em 0 hsla(0,0%,0%,.5),
+  0 .25em .25em hsla(0,0%,0%,.1);
+  color: #444;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0 .5em 1em;
+  padding: .5em 1.5em .75em;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 1px 1px hsla(0,0%,100%,.25);
+  vertical-align: middle;
+}
+
+.button a {
+  color: white;
+}
+
+
+.button:hover {
+  outline: none;
+  background-color: #ff2024;
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.25),
+  inset 0 2px 0 hsla(0,0%,100%,.1),
+  inset 0 1.2em 0 hsla(0,0%,100%,.1),
+  inset 0 -.2em 0 hsla(0,0%,100%,.1),
+  inset 0 -.25em 0 hsla(0,0%,0%,.5),
+  inset 0 0 0 3em hsla(0,0%,100%,.2),
+  0 .25em .25em hsla(0,0%,0%,.1);
+}
+
+.button:active {
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.25),
+  inset 0 2px 0 hsla(0,0%,100%,.1),
+  inset 0 1.2em 0 hsla(0,0%,100%,.1),
+  inset 0 0 0 3em hsla(0,0%,100%,.2),
+  inset 0 .25em .5em hsla(0,0%,0%,.05),
+  0 -1px 1px hsla(0,0%,0%,.1),
+  0 1px 1px hsla(0,0%,100%,.25);
+  margin-top: .25em;
+  outline: none;
+  padding-bottom: .5em;
+}
+
+a {
+  color: grey;
+}
+
+a:hover {
+  color: white;
+}
+
+footer p {
+  font-size: 1em;
 }

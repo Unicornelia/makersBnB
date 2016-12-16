@@ -1,16 +1,27 @@
-
-<div class="panel panel-default">
+<div class="panel panel-danger">
   <div class="panel-heading">
-    <h1><%= @space.space_name  %></h1></div>
-    <div class="panel-body" width=50%>
-      <h3> Description:<br/><br/> </h3> <p><%= @space.space_description %> </p>
-      <h3> Price/night: £<%= @space.price %> </h3>
-      <div class='panel panel-success' width=50%>
-      <h3>Availability date ranges:</h3>
-      <p> <%= @space.start_date %> - <%= @space.end_date %> </p>
+    <h1><%= @space.space_name %></h1></div>
+    <div class="individual-boxes">
+      <h3 class='describe'> Description:</h3>
+      <div class='smaller-individual-boxes'>
+      <h4><%= @space.space_description %></h4>
+      <p>Price/night: £<%= @space.price %></p>
+      <div class=''>
+      <h5>Availability date ranges:</h5>
+      <p><%= @space.start_date %> - <%= @space.end_date %></p>
+    </div>
       <form action='/requests' method='post'>
           <input type="hidden" name="space_id" value="<%= @space.id %>">
-          <button> Send booking request </button>
+          <button class='button'>Send booking request</button>
       </form>
     </div>
   </div>
+</div>
+
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; Team Project @ Makers Academy</p>
+      </div>
+    </div>
+  </footer>

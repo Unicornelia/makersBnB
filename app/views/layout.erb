@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Makers BnB</title>
+  <title>Space BnB</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +11,12 @@
 
   <!-- Bootstrap Core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom CSS -->
   <link href="/css/heroic-features.css" rel="stylesheet">
   <link href='/css/custom.css' rel='stylesheet'>
-
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
@@ -28,8 +25,6 @@
           <li> <a href="/">Makers BnB</a></li>
           <li> <a href='/spaces'>View Spaces</a></li>
           <li> <a href="/spaces/new" name='Add a space'> Add a space </a></li>
-          <li> <a href="/sign-up"> Sign up </a></li>
-          <li> <a href="/sessions/new"> Log in </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
 
@@ -38,10 +33,11 @@
           <li class='user-name'>  Welcome, <%= current_user.username %>!</li>
           <li class='log-out'>  <form method='post' action='/sessions'>
             <input type='hidden' name='_method' value='delete'>
-            <input type='submit' value='Log Out'>
+            <input class='button' type='submit' value='Log Out'>
           </form> </li>
           <% else %>
-          <li><a href="/sign-up"> Please Sign up </a></li>
+          <li><a href="/sign-up">Sign up </a></li>
+          <li> <a href="/sessions/new"> Log in </a></li>
           <% end %>
         </ul>
       </div>
@@ -70,5 +66,12 @@
 
     </div>
   </div>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
