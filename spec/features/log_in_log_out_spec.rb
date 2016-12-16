@@ -18,7 +18,7 @@ feature "User sign out" do
   scenario "while being signed in" do
     log_in(username: 'CoolWinner', password: 'cool99')
     click_button "Log Out"
-    expect(page).to have_content "Goodbye you cool, cool winner!"
+    expect(page).to have_content "Goodbye!"
     expect(page).not_to have_content "Welcome, CoolWinner"
   end
 

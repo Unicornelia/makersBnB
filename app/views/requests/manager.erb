@@ -1,43 +1,43 @@
-  <h3><%if flash[:request_sent]%></h3>
-  <h3><%=flash[:request_sent]%></h3>
-  <%end%>
+<h3><%if flash[:request_sent]%></h3>
+<h3><%=flash[:request_sent]%></h3>
+<%end%>
 <div class='row panel-danger col-lg-12'>
-<div class="panel-heading">
-  <h1> Requests <h2>
-</div>
+  <div class="panel-heading">
+    <h1> Requests <h2>
+    </div>
     <div class="individual-boxes-request col-md-5 text-center">
-	  <h3 class='describe'>Requests you've sent: </h3>
-		<% @requests.each do |request| %>
-       <% if current_user.id == request.user.id %>
-    <div class='smaller-individual-boxes-request'>
-    <h4><strong>Name:</strong></h4><h4><%= request.space.space_name %></h4>
-		<h4>Date requested:</h4><h6><%= request.requested_date %></h6>
-      <h4>Booking status:</h4><p> <%= request.booking_status %></p>
+      <h3 class='describe'>Requests you've sent: </h3>
+      <% @requests.each do |request| %>
+      <% if current_user.id == request.user.id %>
+      <div class='smaller-individual-boxes-request'>
+        <h4><strong>Name:</strong></h4><h4><%= request.space.space_name %></h4>
+        <h4>Date requested:</h4><h6><%= request.requested_date %></h6>
+        <h4>Booking status:</h4><p> <%= request.booking_status %></p>
       </div>
-		<% end %>
       <% end %>
-      
-  </div>
+      <% end %>
+
+    </div>
     <div class="individual-boxes-request col-md-5 text-center">
       <h3 class='describe'>Requests you've received:</h3>
       <% @requests.each do |request| %>
-    <% if current_user.username == request.space.user.username %>
+      <% if current_user.username == request.space.user.username %>
       <div class='smaller-individual-boxes-request'>
-    <h4><strong>Name:</strong></h4><h4> <%= request.space.space_name %></h4>
-    <h4>Date requested:</h4><h6> <%= request.requested_date %></h6>
-    <h4>Name of guest:</h4><p> <%= request.user.username %></p>
-    <h4>Booking status:</h4><p> <%= request.booking_status %></p>
-    <% if !request.confirmed %>
-    <form action='/requests/confirm' method='post'>
-      <input type="hidden" name="request_id" value="<%= request.id %>">
-      <button class='button'> Confirm booking </button>
-    </form>
-    <% end %>
-    <% end %>
-    <% end %>
+        <h4><strong>Name:</strong></h4><h4> <%= request.space.space_name %></h4>
+        <h4>Date requested:</h4><h6> <%= request.requested_date %></h6>
+        <h4>Name of guest:</h4><p> <%= request.user.username %></p>
+        <h4>Booking status:</h4><p> <%= request.booking_status %></p>
+        <% if !request.confirmed %>
+        <form action='/requests/confirm' method='post'>
+          <input type="hidden" name="request_id" value="<%= request.id %>">
+          <button class='button'> Confirm booking </button>
+        </form>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
-    </div>
-	</div>
+  </div>
 </div>
 
 <footer>

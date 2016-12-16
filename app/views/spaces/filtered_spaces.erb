@@ -10,10 +10,11 @@
         <p><%= space.space_description %></p>
         <p>£<%= space.price %> per night </p>
         <a href='/spaces/<%= space.space_name %> '><button> Visit space</button></a>
-      </div>      
+      </div>
     </div>
   </div>
 </div>
+<% end %>
 
 <% else %>
 <div class="panel-heading"><h2>No spaces are available for the requested dates.</h2></div>
