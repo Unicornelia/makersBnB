@@ -24,12 +24,12 @@
         <ul class="nav navbar-nav navbar-left">
           <li> <a href="/">Makers BnB</a></li>
           <li> <a href='/spaces'>View Spaces</a></li>
-          <li> <a href="/spaces/new" name='Add a space'> Add a space </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
 
           <% if current_user %>
           <li class='requests'> <a href="/requests/manager" name='View requests'> View requests </a> </li>
+          <li> <a href="/spaces/new" name='Add a space'> Add a space </a></li>
           <li class='user-name'>  Welcome, <%= current_user.username %>!</li>
           <li class='log-out'>  <form method='post' action='/sessions'>
             <input type='hidden' name='_method' value='delete'>
