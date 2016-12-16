@@ -9,11 +9,12 @@
         <h3><%= space.space_name %></h3>
         <p><%= space.space_description %></p>
         <p>£<%= space.price %> per night </p>
-        <% end %>
-      </div>
+        <a href='/spaces/<%= space.space_name %> '><button> Visit space</button></a>
+      </div>      
     </div>
   </div>
 </div>
+
 <% else %>
 <div class="panel-heading"><h2>No spaces are available for the requested dates.</h2></div>
 <button class='button'><a href='/spaces'>Back to Spaces</a></button>
