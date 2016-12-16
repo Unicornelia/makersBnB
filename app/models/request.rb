@@ -10,4 +10,9 @@ class Request
 
   belongs_to :user
   belongs_to :space
+
+  def booking_status
+     @status = self.confirmed ? "Confirmed!" : "Awaiting confirmation"
+  end
+
 end
