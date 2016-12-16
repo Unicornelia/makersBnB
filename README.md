@@ -47,7 +47,14 @@ I should not be able to book a space that already has been hired
 
 Technologies used:
 -----------------
-
 * HTML, CSS
 * Ruby
 * Sinatra, Capybara, Rspec
+* Heroku
+* Magic
+
+Application interface:
+---------------------
+![intro](app/images/intro.png)
+
+Application on heroku: https://spacesbnb.herokuapp.com/
