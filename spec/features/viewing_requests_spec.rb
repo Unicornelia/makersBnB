@@ -1,7 +1,7 @@
 
 feature "requests " do
 
-    let!(:user) do
+  let!(:user) do
     create_user
   end
 
@@ -14,6 +14,9 @@ feature "requests " do
 
   scenario "see a new request" do
     add_first_space
+    visit '/spaces'
+    fill_in 'requested_date', with: Date.new(2017, 01, 10)
+    click_button 'Filter available spaces'
     visit 'spaces/First%20space'
     click_button 'Send booking request'
     expect(page).to have_content("First space")

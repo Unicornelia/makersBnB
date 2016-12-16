@@ -15,4 +15,8 @@ class Request
      @status = self.confirmed ? "Confirmed!" : "Awaiting confirmation"
   end
 
+  def already_confirmed?
+    self.confirmed
+  end
+
 end
