@@ -6,7 +6,6 @@ feature 'filtering spaces by availability' do
     add_first_space
     add_second_space
     fill_in 'requested_date', with: Date.new(2017, 01, 15)
-    # fill_in 'end_date', with: Date.new(2017, 01, 17)
     click_button 'Filter available spaces'
     expect(current_path).to eq '/filtered-spaces'
     expect(page).to have_content 'First space'
