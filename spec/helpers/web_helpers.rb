@@ -1,6 +1,5 @@
 def sign_up(email: 'helloworld@gmail.com', password: '1234', password_confirmation: '1234')
   visit "/sign-up"
-  expect(page.status_code).to eq(200)
   fill_in "username", :with => "Chrixs"
   fill_in "email", :with => email
   fill_in "password", :with => password
@@ -16,10 +15,19 @@ def log_in(*)
 end
 
 def create_user
-    User.create(email: 'cool@winners.com',
-    password: 'cool99',
-    password_confirmation: 'cool99',
-    username: 'CoolWinner')
+  User.create(email: 'cool@winners.com',
+  password: 'cool99',
+  password_confirmation: 'cool99',
+  username: 'CoolWinner')
+end
+
+def sign_up_two(email: 'hi@hi.com', password: '1234', password_confirmation: '1234')
+  visit "/sign-up"
+  fill_in "username", :with => "Mike"
+  fill_in "email", :with => email
+  fill_in "password", :with => password
+  fill_in 'password_confirmation', :with => password_confirmation
+  click_button "Sign Up"
 end
 
 def add_first_space
@@ -45,17 +53,20 @@ def add_second_space
 end
 
 def book_a_space
-    add_first_space
-    click_button "Log Out"
-    sign_up
-    visit 'spaces/First%20space'
-    click_button "Send booking request"
+  add_first_space
+  click_button "Log Out"
+  sign_up
+  visit '/spaces'
+  fill_in 'requested_date', with: Date.new(2017, 01, 10)
+  click_button 'Filter available spaces'
+  visit '/spaces/First%20space'
+  click_button "Send booking request"
 end
 
 def confirm_booking
-    book_a_space
-    click_button "Log Out"
-    log_in
-    click_link "View requests"
-    click_button "Confirm booking"
-  end
+  book_a_space
+  click_button "Log Out"
+  log_in
+  click_link "View requests"
+  click_button "Confirm booking"
+end

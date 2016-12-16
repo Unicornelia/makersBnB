@@ -5,7 +5,7 @@ class Request
   include DataMapper::Resource
 
   property :id, Serial
-  property :requested_date, Date
+  property :requested_date, Date, :required => true
   property :confirmed, Boolean
 
   belongs_to :user
@@ -13,6 +13,10 @@ class Request
 
   def booking_status
      @status = self.confirmed ? "Confirmed!" : "Awaiting confirmation"
+  end
+
+  def already_confirmed?
+    self.confirmed
   end
 
 end

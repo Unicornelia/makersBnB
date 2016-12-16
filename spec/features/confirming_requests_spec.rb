@@ -2,8 +2,7 @@ describe "confirming requests" do
 
   scenario 'before a booking is confirmed, booking request status is "awaiting confirmation"' do
     book_a_space
-    click_link 'View requests'
-    expect(page).to have_content "Booking status: Awaiting confirmation"
+    expect(page).to have_content "Awaiting confirmation"
   end
 
   scenario 'accepting a booking removes confirm button and sets the booking request status to "confirmed"' do
@@ -15,6 +14,6 @@ describe "confirming requests" do
     fill_in "password", :with => "1234"
     click_button "Log In"
     click_link('View requests')
-    expect(page).to have_content "Booking status: Confirmed!"
+    expect(page).to have_content "Confirmed!"
   end
 end
