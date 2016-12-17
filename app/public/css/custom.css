@@ -17,6 +17,12 @@ header {
   margin: auto;
 }
 
+.dates {
+  margin: auto;
+  border: 1px solid #ccabb2;
+  width: 50%;
+}
+
 header p {
   color: white;
 }
